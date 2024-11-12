@@ -742,7 +742,7 @@ void MemoryArbitrationFuzzer::verify() {
   }
 
   std::this_thread::sleep_for(
-      std::chrono::seconds(FLAGS_iteration_duration_sec));
+      std::chrono::seconds(7200));
   stop = true;
 
   for (auto& queryThread : queryThreads) {

@@ -896,6 +896,9 @@ bool MemoryPoolImpl::maybeIncrementReservation(uint64_t size) {
             !underMemoryArbitration())) {
       return false;
     }
+    if (underMemoryArbitration()) {
+      ::abort();
+    }
   }
   incrementReservationLocked(size);
   return true;
